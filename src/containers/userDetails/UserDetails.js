@@ -1,4 +1,7 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+
+import "./style.scss";
 
 const UserDetails = ({
   name,
@@ -8,9 +11,13 @@ const UserDetails = ({
   phone,
   website,
   company,
+  back
 }) => (
   <div className="user-info">
     <div className="container">
+      <button className="user-info__back back" onClick={back}>
+        back
+      </button>
       <ul className="user-info__list">
         <li className="user-info__item">Name: {name}</li>
         <li className="user-info__item">Username: {username}</li>
@@ -23,5 +30,20 @@ const UserDetails = ({
     </div>
   </div>
 );
+
+UserDetails.propTypes = {
+  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  address: PropTypes.shape({
+    street: PropTypes.string.isRequired
+  }).isRequired,
+  phone: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  company: PropTypes.shape({
+    name: PropTypes.string.isRequired
+  }).isRequired,
+  back: PropTypes.func.isRequired
+};
 
 export default UserDetails;

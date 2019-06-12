@@ -1,23 +1,22 @@
 import {
   FETCH_USERS_REQUESTED,
   FETCH_USERS_COMPLETE,
-  FETCH_USERS_ERROR,
-} from '../constants';
+  FETCH_USERS_ERROR
+} from "../constants";
 
 const initialState = {
   users: [],
   loading: false,
-  success: false,
-  error: false,
+  error: false
 };
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_USERS_REQUESTED: {
-      return { ...state, loading: true, success: false };
+      return { ...state, loading: true };
     }
     case FETCH_USERS_COMPLETE: {
-      return { ...state, loading: false, success: true, users: action.payload };
+      return { ...state, loading: false, users: action.payload };
     }
     case FETCH_USERS_ERROR: {
       return { ...state, error: true };

@@ -1,0 +1,32 @@
+.post-content {
+  padding-top: 120px;
+  position: relative;
+
+  &__back {
+    position: absolute;
+    top: 30px;
+  }
+
+  &__title {
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    text-transform: capitalize;
+    font-size: 20px;
+    line-height: 2;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #000;
+
+  &__title {
+    margin-left: 15px;
+  }
+}

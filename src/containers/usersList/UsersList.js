@@ -1,5 +1,8 @@
-import React from 'react';
-import UsersListItem from './UsersListItem';
+import React from "react";
+import UsersListItem from "./UsersListItem";
+import PropTypes from "prop-types";
+
+import "./style.scss";
 
 const UsersList = ({ users }) => (
   <div className="container">
@@ -15,5 +18,9 @@ const usersList = users =>
       <UsersListItem {...user} />
     </li>
   ));
+
+UsersList.propTypes = {
+  users: PropTypes.array.isRequired
+};
 
 export default UsersList;
